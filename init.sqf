@@ -18,7 +18,7 @@ if (isServer) then {
 		[] spawn {
 			waitUntil { !isNull player };
 			S_INIT = true;
-		}
+		};
 	} else {
 		S_INIT = true;
 	};
@@ -66,7 +66,7 @@ if (isServer) {
 CenterE = createCenter east;
 // Legt fest, ob Team A mit Team B verbündet (1) oder verfeindet (0) ist, oder
 // etwas dazwischen (?!)
-EAST setFriend [WEST, 0]
+EAST setFriend [WEST, 0];
 // Sollte das hier CenterW heißen?
 CenterE = createCenter west;
 WEST setFriend [EAST, 0];
