@@ -1,0 +1,45 @@
+// Autor der Mission
+//author = "";
+
+// Text (üblicherweise Missionsname), der während des Ladevorgangs der Mission
+// angezeigt wird. Der Text steht oberhalb des Bildes und ist etwas größer als
+// der Text von onLoadMission.
+//onLoadName = "";
+
+// Nachricht, die während des Ladevorgangs der Mission angezeigt wird. Der Text
+// steht unterhalb des Bildes. und ist etwas kleiner als der Text von
+// onLoadName.
+//onLoadMission = "";
+
+// Text, der unterhalb des Bildes im Missionsauswahlbildschirm angezeigt wird.
+//overviewText = "";
+
+// Legt fest, ob man während des Ladevorgangs der Mission das aktuelle Datum
+// und die Uhrzeit sieht.
+//onLoadMissionTime = 1;
+
+// Legt die Art des Respawns fest.
+// 0 oder "NONE" - Kein Respawn
+// 1 oder "BIRD" - Respawn als Möwe
+// 2 oder "INSTANT" - Respawn an Ort und Stelle
+// 3 or "BASE" - Respawn in der Basis (muss durch Marker festgelegt werden)
+//respawn = "NONE";
+
+// (De)aktiviert den Respawn-Button im Menü für INSTANT und BASE Respawn.
+// Standard ist 1.
+//respawnButton = 1;
+
+// Respawn-Verzögerung in Sekunden
+//respawnDelay = 10;
+
+// Legt fest, ob im Respawn-Bildschirm ein Countdown und das Scoreboard
+// angezeigt werden, wenn respawnType auf "BASE" gestellt ist Standard ist 1.
+//respawnDialog = 1;
+
+// Legt fest, ob Spieler direkt nach dem Beitritt respawnen.
+//respawnOnStart = 0;
+
+// Entfernt alle spielbaren Einheiten, die keinen menschlichen Spieler
+// besitzen. Wenn 0, dann wird ein ausgestiegener Spieler durch KI ersetzt.
+// Ansonsten stirbt die Einheit. Standard ist 0.
+//disabledAI = 0;
