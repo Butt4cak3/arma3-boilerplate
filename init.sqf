@@ -42,22 +42,23 @@ private ["_script"];
 _script = [] execVM "functions\initmain.sqf";
 waitUntil { scriptDone _script };
 
-// Bedeutet diese Syntax, dass das Script als Funktion "gespeichert" wird,
-// damit man es nur ein mal laden muss? Wieso müssen gerade diese Scripts auf
-// diese Weise geladen werden?
 spawnFunction = compile preprocessFileLineNumbers "functions\initspawn.sqf";
 call spawnFunction;
-loadoutFunction = compile preprocessFileLineNumbers "functions\initloadout.sqf";
-call loadoutFunction;
 
-if (isServer) {
+if (isServer) then {
 	// Initialisierungsscript für den Server aufrufen
 	_script = [] execVM "functions\initserver.sqf";
 	waitUntil { scriptDone _script };
-} else {
-	// Initialisierungsscript für den Client aufrufen
+};
+
+if (!isDedicated) then {
+	// Initialisierungsscript für Clients aufrufen
 	_script = [] execVM "functions\initclient.sqf";
 	waitUntil { scriptDone _script };
+
+	// Einheit initialisieren
+	_script = [] execVM "functions\initunit.sqf";
+	waitUntil { scriptDone _script; };
 };
 
 // Diverse Einstellungen
