@@ -1,13 +1,15 @@
 /**
- * Lädt das Script einer Einheit im Ordner scripts\units\
+ * Lädt Klassenloadout und Unit-Script einer Einheit
  */
 
 private ["_script"];
 
-waitUntil { local player; };
-
-_script = [] execVM format["scripts\units\%1.sqf", player];
+_script = _this execVM format["scripts\loadouts\classes\%1.sqf", _this];
 if (!isNil "_script") then {
 	waitUntil { scriptDone _script };
-	player addEventHandler ["respawn", {[] execVM format["scripts\units\%1.sqf", player]}];
+};
+
+_script = _this execVM format["scripts\units\%1.sqf", _this];
+if (!isNil "_script") then {
+	waitUntil { scriptDone _script };
 };
