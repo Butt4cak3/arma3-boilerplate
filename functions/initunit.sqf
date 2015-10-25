@@ -4,7 +4,7 @@
 
 private "_script";
 
-_script = _this execVM format["scripts\loadouts\classes\%1.sqf", _this];
+_script = _this execVM format["scripts\loadouts\classes\%1.sqf", typeof _this];
 if (!isNil "_script") then {
 	waitUntil { scriptDone _script };
 };
