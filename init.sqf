@@ -1,49 +1,20 @@
 // Ermitteln, ob es sich um eine Join in Progress Initialisierung handelt
 if (!isServer && isNull player) then {
 	isJIP = true;
+	waitUntil { !isNull player };
 } else {
 	isJIP = false;
 };
 
-// Stimmt die folgende Aussage so?
-// Warten, bis Server und Client initialisiert sind
-S_INIT = false;
-C_INIT = false;
-
-if (isServer) then {
-	S_INIT = true;
-} else {
-	C_INIT = true;
-	if (isNull player) then {
-		[] spawn {
-			waitUntil { !isNull player };
-			S_INIT = true;
-		};
-	} else {
-		S_INIT = true;
-	};
-	// Ist der Inhalt dieses Blocks verkürzbar?
-	/*
-	C_INIT = true;
-	if (isNull player) then {
-		waitUntil { !isNull player };
-	};
-	S_INIT = true;
-	*/
-};
-
-waitUntil { S_INIT };
 waitUntil { !isNil "bis_fnc_init" };
 
 // Debugging (de)aktivieren
 debug = false;
 
-private ["_script"];
+private "_script";
+
 _script = [] execVM "functions\initmain.sqf";
 waitUntil { scriptDone _script };
-
-spawnFunction = compile preprocessFileLineNumbers "functions\initspawn.sqf";
-call spawnFunction;
 
 if (isServer) then {
 	// Initialisierungsscript für den Server aufrufen

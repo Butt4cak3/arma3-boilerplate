@@ -1,8 +1,8 @@
-// Schutz gegen fehlerhafte Ausführung
-if (!local player) exitWith {};
+private "_script";
 
-private["_script"];
+if (local player) then {
+	_script = player execVM "functions\initunit.sqf";
+	waitUntil { scriptDone _script };
 
-_script = player execVM "functions\initunit.sqf";
-waitUntil { scriptDone _script };
-player addEventHandler["respawn", { player execVM "functions\initunit.sqf" }];
+	player addEventHandler["respawn", { player execVM "functions\initunit.sqf" }];
+};

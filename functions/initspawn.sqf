@@ -1,14 +1,8 @@
 /**
  * Lädt alle Spawn-Scripts
- * 
- * Aufruf des Scripts:
- * spawnFunction = compile preprocessFileLineNumbers "functions\initspawn.sqf";
- * call spawnFunction;
  */
 
-if (!isMultiplayer) exitWith {};
-
-private ["_script"];
+private "_script";
 
 if (isServer) then {
 	// Objekte

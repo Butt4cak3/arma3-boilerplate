@@ -2,7 +2,7 @@
  * Lädt Klassenloadout und Unit-Script einer Einheit
  */
 
-private ["_script"];
+private "_script";
 
 _script = _this execVM format["scripts\loadouts\classes\%1.sqf", _this];
 if (!isNil "_script") then {

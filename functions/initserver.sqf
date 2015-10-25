@@ -1,8 +1,12 @@
-// Schutz gegen fehlerhafte Ausführung
-if (!isServer) exitWith {};
+private "_script";
 
-{
-	if (!isPlayer _x) {
-		nul = _x execVM "functions\initunit.sqf";
-	}
-} foreach (allUnits);
+if (isServer) then {
+	_script = execVM "functions\initspawn.sqf";
+	waitUntil { scriptDone _script };
+
+	{
+		if (!isPlayer _x) then {
+			nul = _x execVM "functions\initunit.sqf";
+		}
+	} foreach (allUnits);
+};
