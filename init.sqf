@@ -55,10 +55,6 @@ if (!isDedicated) then {
 	// Initialisierungsscript für Clients aufrufen
 	_script = [] execVM "functions\initclient.sqf";
 	waitUntil { scriptDone _script };
-
-	// Einheit initialisieren
-	_script = [] execVM "functions\initunit.sqf";
-	waitUntil { scriptDone _script; };
 };
 
 // Diverse Einstellungen

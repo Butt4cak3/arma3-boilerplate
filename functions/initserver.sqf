@@ -2,5 +2,7 @@
 if (!isServer) exitWith {};
 
 {
-	nul = _x execVM "functions\initunit.sqf";
+	if (!isPlayer _x) {
+		nul = _x execVM "functions\initunit.sqf";
+	}
 } foreach (allUnits);
