@@ -17,26 +17,26 @@ _script = [] execVM "functions\initmain.sqf";
 waitUntil { scriptDone _script };
 
 if (isServer) then {
-	// Initialisierungsscript für den Server aufrufen
+	// Initialisierungsscript fÃ¼r den Server aufrufen
 	_script = [] execVM "functions\initserver.sqf";
 	waitUntil { scriptDone _script };
 };
 
 if (!isDedicated) then {
-	// Initialisierungsscript für Clients aufrufen
+	// Initialisierungsscript fÃ¼r Clients aufrufen
 	_script = [] execVM "functions\initclient.sqf";
 	waitUntil { scriptDone _script };
 };
 
 // Diverse Einstellungen
 
-// Die Dokumentation zu createCenter ist für mich nichtsaussagend :(
+// Die Dokumentation zu createCenter ist fÃ¼r mich nichtsaussagend :(
 CenterE = createCenter east;
-// Legt fest, ob Team A mit Team B verbündet (1) oder verfeindet (0) ist, oder
+// Legt fest, ob Team A mit Team B verbÃ¼ndet (1) oder verfeindet (0) ist, oder
 // etwas dazwischen (?!)
 EAST setFriend [WEST, 0];
-// Sollte das hier CenterW heißen?
-CenterE = createCenter west;
+// Sollte das hier CenterW heiÃŸen?
+CenterW = createCenter west;
 WEST setFriend [EAST, 0];
 // ?!
 noPop = true;
