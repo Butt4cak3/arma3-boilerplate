@@ -43,3 +43,22 @@
 // besitzen. Wenn 0, dann wird ein ausgestiegener Spieler durch KI ersetzt.
 // Ansonsten stirbt die Einheit. Standard ist 0.
 //disabledAI = 0;
+
+// Definiert Informationen, die im Kopfbereich der Missionen beim Ladevorgang
+// und der Slot-Auswahl angezeigt werden.
+class Header
+{
+	// Definiert den Spieltyp.
+	// Mögliche Werte: "Unknown", "Coop", "DM", "TDM", "CTF", "SC", "CTI", 
+	// "RPG", "Sandbox", "Seize", "Defend", "ZDM", "ZCTF", "ZCoop",
+	// "ZSC", "ZCTI", "ZTDM", "ZRPG", "ZGM", "ZvZ", "ZvP" 
+	//gameType = COOP;
+ 
+	// Definiert die minimal mögliche Anzahl an Spielern, die bei der Mission 
+	// unterstützt werden.
+	//minPlayers = 1;
+
+	// Definiert die maximal mögliche Anzahl an Spielern, die bei der Mission 
+	// unterstützt werden.
+	//maxPlayers = 12;
+};
