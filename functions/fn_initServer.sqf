@@ -7,7 +7,7 @@ if (isServer) then
 	{
 		if (!isPlayer _x) then
 		{
-			_x call LK_fnc_initUnit;
+			_x spawn LK_fnc_initUnit;
 		}
 	} foreach (allUnits);
 };
