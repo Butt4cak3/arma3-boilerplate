@@ -4,7 +4,8 @@
 
 private "_script";
 
-if (isServer) then {
+if (isServer) then
+{
 	// Objekte
 	_script = [] execVM "scripts\spawn_objects.sqf";
 	waitUntil { scriptDone _script };

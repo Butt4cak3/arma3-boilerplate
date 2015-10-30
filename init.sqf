@@ -1,8 +1,11 @@
 // Ermitteln, ob es sich um eine Join in Progress Initialisierung handelt
-if (!isServer && isNull player) then {
+if (!isServer && isNull player) then
+{
 	isJIP = true;
 	waitUntil { !isNull player };
-} else {
+}
+else
+{
 	isJIP = false;
 };
 
@@ -16,13 +19,15 @@ private "_script";
 _script = [] execVM "functions\initmain.sqf";
 waitUntil { scriptDone _script };
 
-if (isServer) then {
+if (isServer) then
+{
 	// Initialisierungsscript für den Server aufrufen
 	_script = [] execVM "functions\initserver.sqf";
 	waitUntil { scriptDone _script };
 };
 
-if (!isDedicated) then {
+if (!isDedicated) then
+{
 	// Initialisierungsscript für Clients aufrufen
 	_script = [] execVM "functions\initclient.sqf";
 	waitUntil { scriptDone _script };
