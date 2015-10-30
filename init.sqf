@@ -16,21 +16,18 @@ debug = false;
 
 private "_script";
 
-_script = [] execVM "functions\initmain.sqf";
-waitUntil { scriptDone _script };
+[] call LK_fnc_initMain;
 
 if (isServer) then
 {
 	// Initialisierungsscript für den Server aufrufen
-	_script = [] execVM "functions\initserver.sqf";
-	waitUntil { scriptDone _script };
+	[] call LK_fnc_initServer;
 };
 
 if (!isDedicated) then
 {
 	// Initialisierungsscript für Clients aufrufen
-	_script = [] execVM "functions\initclient.sqf";
-	waitUntil { scriptDone _script };
+	[] call LK_fnc_initClient;
 };
 
 // Diverse Einstellungen

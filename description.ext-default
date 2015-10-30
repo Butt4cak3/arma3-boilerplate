@@ -62,3 +62,8 @@ class Header
 	// unterstützt werden.
 	//maxPlayers = 12;
 };
+
+class CfgFunctions
+{
+	#include "functions\functions.h"
+};
